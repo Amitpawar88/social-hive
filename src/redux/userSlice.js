@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-    name:"user",
-    initialState:{
-        user:null,
-        otherUsers:null
+  name: "user",
+  initialState: {
+    user: null,
+    otherUsers: null,
+    profile: null
+  },
+  reducers: {
+    // multiple actions
+    getUser: (state, action) => {
+      state.user = action.payload;
     },
-    reducers: {
-        // multiple actions
-        getUser:(state,action)=>{
-            state.user = action.payload;
-        },
-        getOtherUsers:(state,action)=>{
-            state.otherUsers = action.payload;
-        }
+    getOtherUsers: (state, action) => {
+      state.otherUsers = action.payload;
+    },
+    getMyProfile: (state, action) => {
+        state.profile = action.payload; // Update profile state with payload
     }
+  }
 });
 
-export const {getUser, getOtherUsers} = userSlice.actions;
+export const { getUser, getOtherUsers, getMyProfile } = userSlice.actions;
 export default userSlice.reducer;

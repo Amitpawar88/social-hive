@@ -4,7 +4,7 @@ import { FaRegComment } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { CiBookmark } from "react-icons/ci";
 
-const Tweet = () => {
+const Tweet = ({tweet}) => {
   return (
     <div className='border-b border-gray-200'>
             <div>
@@ -16,21 +16,21 @@ const Tweet = () => {
                             <p className='text-gray-500 text-sm ml-1'>_amitpawar</p>
                         </div>
                         <div>
-                            <p>Tweet goes here</p>
+                            <p>{tweet?.description}</p>
                         </div>
                         <div className='flex justify-between my-3'>
                             <div className='flex items-center'>
                                 <div className='p-2 hover:bg-green-200 rounded-full cursor-pointer'>
                                     <FaRegComment size="20px" />
                                 </div>
-                                <p>9</p>
+                                <p>0</p>
                             </div>
                             <div className='flex items-center'>
                                 <div className='p-2 hover:bg-pink-200 rounded-full cursor-pointer'>
                                     <CiHeart size="24px" />
 
                                 </div>
-                                <p>3</p>
+                                <p>{tweet?.like?.length}</p>
                             </div>
                             <div className='flex items-center'>
                                 <div className='p-2 hover:bg-yellow-200 rounded-full cursor-pointer'>
